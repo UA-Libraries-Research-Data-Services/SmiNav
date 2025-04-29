@@ -4,6 +4,7 @@
 SmiNav (SMILES Navigator) is a GUI visualizer for parts of the SMILES syntax (atoms, neighbors, and rings). It was inspired by Andrew Dalke's [smiview](https://hg.sr.ht/~dalke/smiview). It uses the [RDKit](https://www.rdkit.org/) library in Python to parse the SMILES string and return mol coordinates and properties that are then used to create a 2D or 3D visualization of the molecule. The visualization is done using the [Godot game engine](https://godotengine.org/).
 
 > Please see the [Godot License](https://godotengine.org/license/)
+> Please see the [RDkit License](https://github.com/rdkit/rdkit)
 
 To use SmiNav, input a SMILES string, then click the visualization dimension you wish to view. Upon clicking on an atom in the string, the corresponding atom in the depiction will then get highlighted. The reverse works as well; that is, click on an atom in the depiction and the corresponding atom in the SMILES string will get highlighted.
 
@@ -31,8 +32,8 @@ We did this for fun and to learn how to create interfaces in Godot. Any feedback
 
 ## Installation of source code in godot
 
-1. Download the source code from the repository
-`git clone https://github.com/ualibweb/sminav.git`
+1. Download the source code from the repository  
+`git clone https://github.com/UA-Libraries-Research-Data-Services/SmiNav.git`
 2. Open Godot and click on `Import`
 3. Navigate to the `SmiNav` folder and click on `Open` on the `project.godot` file
 
@@ -40,25 +41,29 @@ We did this for fun and to learn how to create interfaces in Godot. Any feedback
 
 In the Godot editor, click on the `Play` button to run `►` the program on the top right corner of the window.
 
-## Downlad binaries from Releases
+## Exporting Binaries with Godot
 
-For Linux x86, download the base `SmiNav_Linux.zip`
+To create standalone binaries of the SmiNav application for your operating system:
 
-For Arm64 Linux systems like Raspi, download the `SmiNav_LinuxArm.zip`
+1. **Install Export Templates**:
+   - In Godot, go to `Editor > Manage Export Templates` and download the official templates for your Godot version.
 
-For Windows systems, download the `SmiNav_Windows.zip`
+2. **Install Export Presets**:
+   - Open your SmiNav project in Godot.
+   - Go to `Project > Export`.
+   - Click `Add` and select the platform you want to export for (e.g., Windows, Linux, MacOS).
+   - Set the export path and other relevant options (e.g., binary name, icon, etc.).
 
-### Running Binaries
+3. **Configure Virtual Environment Requirements**:
+   - Make sure that Python and RDKit dependencies are met as outlined in the section below.
 
-1. Linux x86 - Open binary in file navigator or start from terminal (e.g., `./SmiNav.x86_64`)
+4. **Export**:
+   - Click `Export Project` to create the binary.
+   - The output binary will be placed in the directory you specified in the export preset.
 
-2. Linux ARM64 - Open binary in file navigator or start from terminal with (e.g., `./SmiNav.arm64`)
-     - If needed, use opengl3_es, `./SmiNav.arm64 --rendering-driver opengl3_es`
+> **Note:** If the exported binary does not detect Python automatically, ensure your `.venv` folder exists and is properly configured in the application directory.
 
-3. Windows - Click on SmiNav.exe
-
-> **_NOTE:_** On all platforms, SmiNav will try to detect a .venv enviroment and if it has Python3 and RDKit installed. If not, you are given the option with "Install Requirements" to set this up for you. Alternatively, see below for manual instructions on how to setup your own virtual Python environment, if you do not want SmiNav
-to do this for you. SmiNav creates the .venv folder in the SmiNav folder (you may need to show hidden files to see it).
+> **Important:** You must also move the `rdkit_script.py` file into the same directory as the exported binary for the program to work correctly.
 
 ---
 
@@ -67,18 +72,19 @@ For the program to run, you must have Python 3.7 or greater installed and Python
 ### Ubuntu/Debian Systems or Arm Linux Systems (like Raspberry Pi)
 
 **Install Python 3.7 or greater and Virtual Environment**:
-   - Most modern Ubuntu/Debian systems come with Python 3 already installed. You can check your Python version by running:
-     ```bash
-     python3 --version
-     ```
-   - If you don't have Python 3.7 or greater, install it:
-     ```bash
-     sudo apt-get install python3
-     ```
-   - Install `python3-venv` to use virtual environments:
-     ```bash
-     sudo apt-get install python3-venv
-     ```
+
+- Most modern Ubuntu/Debian systems come with Python 3 already installed. You can check your Python version by running:
+  ```bash
+  python3 --version
+  ```
+- If you don't have Python 3.7 or greater, install it:
+  ```bash
+  sudo apt-get install python3
+  ```
+- Install `python3-venv` to use virtual environments:
+  ```bash
+  sudo apt-get install python3-venv
+  ```
 
 ### Windows Systems
 
@@ -105,9 +111,9 @@ If you prefer to manually set up a virtual environment within the SmiNav folder,
      python3 -m venv .venv
      ```
    - This will create a new directory called `.venv` in your project folder. This directory contains a local Python environment that is isolated from your system-wide Python installation.
-   - 
+
 2. **Activate the Virtual Environment**:
-   - Once the virtual environment is created, you need to activate it. Run the following command:
+   - Once the virtual environment is created, activate it:
      - On Ubuntu/Debian:
        ```bash
        source .venv/bin/activate
@@ -116,26 +122,23 @@ If you prefer to manually set up a virtual environment within the SmiNav folder,
        ```cmd
        .venv\Scripts\activate
        ```
-   - When the virtual environment is activated, your terminal or command prompt will show the name of the environment at the beginning of the command line. This indicates that you are now working within the virtual environment.
-     
+
 3. **Install Dependencies**:
-    - With the virtual environment activated, you can install the required Python packages using `pip`. Run the following command:
+    - With the virtual environment activated, install the required Python packages:
       ```bash
       pip install rdkit
       ```
-    - This will install all the necessary Python packages for the project within the virtual environment, ensuring that they do not interfere with your system-wide Python installation.
-  
 
-### FAQ
+## FAQ
 
-1. If Python dependencies installation fails with SmiNav, delete the created .venv folder before trying again. Typical failure is not having Python 3 or Python venv installed.
+1. If Python dependencies installation fails with SmiNav, delete the created `.venv` folder before trying again. Typical failure is not having Python 3 or Python venv installed.
 
-2. Testing - We have last tested SmiNav with Godot v.4.2.1, RDKit 2023.09.05, and Python 3.11. See also the Godot minimum requirements: https://docs.godotengine.org/en/stable/about/system_requirements.html
+2. Testing - We last tested SmiNav with Godot v.4.2.1, RDKit 2023.09.05, and Python 3.11. See also the Godot minimum requirements: https://docs.godotengine.org/en/stable/about/system_requirements.html
 
-
-### Known Limitations
+## Known Limitations
 
 1. In the 2D depictions, stereochemistry is not shown
-2. Currently only the atom Symbols are interactive in the SMILES string.
-3. Only explict hydrogens are shown in the depictions. Valences are not automatically filled with H (e.g., an alcohol functional group would show up as -O, and not -OH)
+2. Currently only the atom Symbols are interactive in the SMILES string
+3. Only explicit hydrogens are shown in the depictions. Valences are not automatically filled with H (e.g., an alcohol functional group would show up as -O, and not -OH)
 4. Does not support individual explicit hydrogens in the SMILES string (e.g., [H] or [H][O][H]). However, explicit hydrogens are supported when attached to atoms within brackets (e.g., [CH4] as an atom property)
+
