@@ -8,7 +8,7 @@ SmiNav (SMILES Navigator) is a GUI visualizer for parts of the SMILES syntax (at
 
 > Please see the [Godot License](https://godotengine.org/license/)
 > 
-> Please see the [RDkit License]([https://github.com/rdkit/rdkit](https://github.com/rdkit/rdkit?tab=BSD-3-Clause-1-ov-file#readme))
+> Please see the [RDkit License](https://github.com/rdkit/rdkit?tab=BSD-3-Clause-1-ov-file#readme)
 >
 > Please see the [SmiView by Andrew Dalke License](https://hg.sr.ht/~dalke/smiview/browse/LICENSE.txt?rev=tip)
 
