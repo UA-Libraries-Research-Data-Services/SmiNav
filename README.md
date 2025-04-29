@@ -1,6 +1,8 @@
 # SmiNav
 ### SMILES visualization with Godot
 
+> [!CAUTION]> We did this for fun and to learn how to create interfaces in Godot. This program is not thoroughly tested and there are likely to be a variety of SMILES parsing issues and edge-cases that do not visualize correctly. We do not have immediate plans to continue this project, though any feedback and bug reports are welcome.
+
 SmiNav (SMILES Navigator) is a GUI visualizer for parts of the SMILES syntax (atoms, neighbors, and rings). It was inspired by Andrew Dalke's [smiview](https://hg.sr.ht/~dalke/smiview). It uses the [RDKit](https://www.rdkit.org/) library in Python to parse the SMILES string and return mol coordinates and properties that are then used to create a 2D or 3D visualization of the molecule. The visualization is done using the [Godot game engine](https://godotengine.org/).
 
 > Please see the [Godot License](https://godotengine.org/license/)
@@ -68,36 +70,7 @@ To create standalone binaries of the SmiNav application for your operating syste
 
 ---
 
-For the program to run, you must have Python 3.7 or greater installed and Python virtual environments installed:
-
-### Ubuntu/Debian Systems or Arm Linux Systems (like Raspberry Pi)
-
-**Install Python 3.7 or greater and Virtual Environment**:
-
-- Most modern Ubuntu/Debian systems come with Python 3 already installed. You can check your Python version by running:
-  ```bash
-  python3 --version
-  ```
-- If you don't have Python 3.7 or greater, install it:
-  ```bash
-  sudo apt-get install python3
-  ```
-- Install `python3-venv` to use virtual environments:
-  ```bash
-  sudo apt-get install python3-venv
-  ```
-
-### Windows Systems
-
-1. **Install Python 3.7 or greater**:
-   - Download the Python installer from the [official Python website](https://www.python.org/downloads/). Make sure to download a version that is 3.7 or greater.
-   - Run the installer. Ensure you check the box that says "Add Python 3.x to PATH" to make Python accessible from the command line.
-
-2. **Install Virtual Environment**:
-   - Open Command Prompt and install the virtual environment package:
-     ```cmd
-     pip install virtualenv
-     ```
+For the program to run, you must have Python 3.7 or greater installed and Python virtual environments installed.
 
 ## Advanced Installation
 
