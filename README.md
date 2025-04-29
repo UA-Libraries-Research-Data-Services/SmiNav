@@ -8,7 +8,9 @@ SmiNav (SMILES Navigator) is a GUI visualizer for parts of the SMILES syntax (at
 
 > Please see the [Godot License](https://godotengine.org/license/)
 > 
-> Please see the [RDkit License](https://github.com/rdkit/rdkit)
+> Please see the [RDkit License]([https://github.com/rdkit/rdkit](https://github.com/rdkit/rdkit?tab=BSD-3-Clause-1-ov-file#readme))
+>
+> Please see the [SmiView by Andrew Dalke License](https://hg.sr.ht/~dalke/smiview/browse/LICENSE.txt?rev=tip)
 
 To use SmiNav, input a SMILES string, then click the visualization dimension you wish to view. Upon clicking on an atom in the string, the corresponding atom in the depiction will then get highlighted. The reverse works as well; that is, click on an atom in the depiction and the corresponding atom in the SMILES string will get highlighted.
 
