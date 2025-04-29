@@ -1,7 +1,8 @@
 # SmiNav
 ### SMILES visualization with Godot
 
-> [!CAUTION] We did this for fun and to learn how to create interfaces in Godot. This program is not thoroughly tested and there are likely to be a variety of SMILES parsing issues and edge-cases that do not visualize correctly. We do not have immediate plans to continue this project, though any feedback and bug reports are welcome.
+> [!CAUTION]
+> We did this for fun and to learn how to create interfaces in Godot. This program is not thoroughly tested and there are likely to be a variety of SMILES parsing issues and edge-cases that do not visualize correctly. We do not have immediate plans to continue this project, though any feedback and bug reports are welcome.
 
 SmiNav (SMILES Navigator) is a GUI visualizer for parts of the SMILES syntax (atoms, neighbors, and rings). It was inspired by Andrew Dalke's [smiview](https://hg.sr.ht/~dalke/smiview). It uses the [RDKit](https://www.rdkit.org/) library in Python to parse the SMILES string and return mol coordinates and properties that are then used to create a 2D or 3D visualization of the molecule. The visualization is done using the [Godot game engine](https://godotengine.org/).
 
