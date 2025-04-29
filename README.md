@@ -34,6 +34,9 @@ To use SmiNav, input a SMILES string, then click the visualization dimension you
 
 ## Installation of source code in godot
 
+> [!NOTE]
+> For the program to run, you must have Python 3.7 or greater installed and Python virtual environments installed.
+
 1. Download the source code from the repository  
 `git clone https://github.com/UA-Libraries-Research-Data-Services/SmiNav.git`
 2. Open Godot and click on `Import`
@@ -69,7 +72,6 @@ To create standalone binaries of the SmiNav application for your operating syste
 
 ---
 
-For the program to run, you must have Python 3.7 or greater installed and Python virtual environments installed.
 
 ## Advanced Installation
 
